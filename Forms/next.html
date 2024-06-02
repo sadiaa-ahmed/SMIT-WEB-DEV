@@ -8,18 +8,26 @@
 <body>
     <h1>Forms</h1>
     <form >
+        <fieldset>
+            <legend>About You</legend>
         <p>
-            UserName:
-            <input type="text" name="UserName" size="15" maxlength="30">
+            <label for="UserName">UserName</label>
+            <input required id="UserName" type="text" name="UserName" size="15" maxlength="30" placeholder="enter your name">
         </p>
         <p>
-            Password:
-            <input type="password" name="Password" size="15" maxlength="30">
+            <label> Password:</label>
+            <input required id="password" type="password" name="Password" size="15" maxlength="30">
+        </p>
+        <p>
+            Age: <input type="number" min="18" max="25">
         </p>
         <p>
             Your Bio:
            <textarea name="bio" cols="30 " rows="3"></textarea>
         </p>
+        </fieldset>
+        <fieldset>
+            <legend>Some</legend>
         <p>
             Please select your fav genre:
             <br />
@@ -41,5 +49,6 @@
         <br />
 
         <input type="submit" value="Upload" />
+        </fieldset>
 </body>
 </html>
