@@ -1,0 +1,8 @@
+.blue{
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    border: 3px double brown;
+}
+.p2{
+    border: inherit;
+}
