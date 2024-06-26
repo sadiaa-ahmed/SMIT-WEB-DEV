@@ -3,15 +3,40 @@
     justify-content: space-between;
     background-color: #343434;
     padding: 15px;
+    align-items: center;
 }
 .nav{
     background-color: #0d0d0d;
+    height: 2.5em;
+}
+
+@media  only screen and (max-width:375px){
+    .nav{
+        /* background-color: lightblue;
+         */
+         display: none;
+    }
+    .header{
+        padding: 30px;
+    }
+}
+
+@media  only screen and (max-width:768px){
+    .nav{
+        background-color: lightblue;
+         
+         /* display: none; */
+    }
+    .header{
+        padding: 30px;
+    }
 }
 .nav>ul{
     display: flex;
     color: azure;
     column-gap: 10px;
     padding: 0.7rem;
+    margin: 0px;
 }
 .nav>ul>li{
     list-style: none;
