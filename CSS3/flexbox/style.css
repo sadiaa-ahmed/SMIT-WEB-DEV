@@ -7,7 +7,8 @@
 }
 .nav{
     background-color: #0d0d0d;
-    height: 2.5em;
+    /* height: 2.5em; */
+    margin-right: 1em;
 }
 
 @media  only screen and (max-width:375px){
