@@ -1,5 +1,78 @@
 
-// ____________________________________________________
+// // ____________________________________________________
+// // Get all the buttons and the input box
+// const buttons = document.querySelectorAll('button');
+// const inputBox = document.getElementById('inputBox');
+
+// // Initialize a string to store the input value
+// let inputValue = "";
+
+// // Function to update the input box value
+// const updateInputBox = (value) => {
+//     inputBox.value = value;
+// };
+
+// // Function to evaluate the expression
+// const evaluateExpression = () => {
+//     try {
+//         const result = eval(inputValue);
+//         inputValue = result.toString();
+//         updateInputBox(inputValue);
+//     } catch (error) {
+//         alert('Invalid Expression');
+//     }
+// };
+
+// // Function to handle button click events
+// const handleButtonClick = (event) => {
+//     const buttonText = event.target.innerText;
+
+//     switch (buttonText) {
+//         case 'C':
+//             inputValue = "";
+//             break;
+//         case 'DEL':
+//             inputValue = inputValue.slice(0, -1);
+//             break;
+//         case 'CE':
+//             inputValue = "";
+//             break;
+//         case '=':
+//             evaluateExpression();
+//             return;
+//         case '1/x':
+//             inputValue = (1 / eval(inputValue)).toString();
+//             break;
+//         case 'x²':
+//             inputValue = (eval(inputValue) ** 2).toString();
+//             break;
+//         case 'x³':
+//             inputValue = (eval(inputValue) ** 3).toString();
+//             break;
+//         case 'x':
+//             inputValue += '*';
+//             break;
+//         case '/':
+//         case '+':
+//         case '-':
+//         case '%':
+//         case '.':
+//             inputValue += buttonText;
+//             break;
+//         default:
+//             inputValue += buttonText;
+//     }
+    
+//     updateInputBox(inputValue);
+// };
+
+// // Add event listeners to all buttons
+// buttons.forEach(button => {
+//     button.addEventListener('click', handleButtonClick);
+// });
+
+
+
 // Get all the buttons and the input box
 const buttons = document.querySelectorAll('button');
 const inputBox = document.getElementById('inputBox');
@@ -15,7 +88,8 @@ const updateInputBox = (value) => {
 // Function to evaluate the expression
 const evaluateExpression = () => {
     try {
-        const result = eval(inputValue);
+        // Replace 'x' with '*' for multiplication
+        const result = eval(inputValue.replace(/x/g, '*').replace(/÷/g, '/'));
         inputValue = result.toString();
         updateInputBox(inputValue);
     } catch (error) {
@@ -25,7 +99,7 @@ const evaluateExpression = () => {
 
 // Function to handle button click events
 const handleButtonClick = (event) => {
-    const buttonText = event.target.innerText;
+    const buttonText = event.target.innerHTML;
 
     switch (buttonText) {
         case 'C':
@@ -41,13 +115,28 @@ const handleButtonClick = (event) => {
             evaluateExpression();
             return;
         case '1/x':
-            inputValue = (1 / eval(inputValue)).toString();
+            try {
+                const currentVal = parseFloat(inputBox.value);
+                inputValue = (1 / currentVal).toString();
+            } catch {
+                alert('Invalid Expression');
+            }
             break;
-        case 'x²':
-            inputValue = (eval(inputValue) ** 2).toString();
+        case 'x<sup>2</sup>':
+            try {
+                const currentVal = parseFloat(inputBox.value);
+                inputValue = (currentVal ** 2).toString();
+            } catch {
+                alert('Invalid Expression');
+            }
             break;
-        case 'x³':
-            inputValue = (eval(inputValue) ** 3).toString();
+        case 'x<sup>3</sup>':
+            try {
+                const currentVal = parseFloat(inputBox.value);
+                inputValue = (currentVal ** 3).toString();
+            } catch {
+                alert('Invalid Expression');
+            }
             break;
         case 'x':
             inputValue += '*';
