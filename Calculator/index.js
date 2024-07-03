@@ -1,7 +1,6 @@
 const buttons = document.querySelectorAll('button');
 const inputBox = document.getElementById('inputBox');
 
-// Initialize a string to store the input value
 let inputValue = "";
 
 // Function to update the input box value
