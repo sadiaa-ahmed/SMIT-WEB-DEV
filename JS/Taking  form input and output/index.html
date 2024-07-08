@@ -17,29 +17,36 @@
     <h1>
         BMI Calculator
     </h1>
-    <form onsubmit="calculate(); return false">
+    <form onsubmit="calculateBMI(); return false">
         <label for="heightInputFeet">
             your Height:
         </label>
-        <input required step="1" class="heightInputField " type="number" id="heightInputFeet" min="0" max="10" placeholder="feet" width="3" size="5">
-        <input required step="1" class="heightInputField " type="number" id="heightInputInch" min="0" max="11" placeholder="inch" width="3" >
+        <input required step="1" class="heightInputField " type="number" id="heightInputFeet" min="0" max="10" placeholder="feet" size="5">
+        <input required step="1" class="heightInputField " type="number" id="heightInputInch" min="0" max="11" placeholder="inch" >
 
-        <label for="heightInput">
+        <br>
+        <label for="weightInputKg">
             your Weight:
         </label>
-        <input required step="0.1" class="weightInputField " type="number" id="WeightInputKg" min="0" max="200" placeholder="feet" width="85kg">
-        <!-- <input class="heightInputField " type="number" id="heightInput" min="0" max="11" placeholder="inch" width="3"> -->
+        <input required step="0.1" class="weightInputField " type="number" id="weightInputKg" min="0" max="200" placeholder="85kg"  size="5">
 
         <button type="submit"> 
             Calculate
         </button>
+    </form>
+        <div id="result">
+            <h2 id="title"></h2>
+            <p id="suggestion"></p>
+        </div>
+         
+        <img src="./R.png" width="300" height="300" alt="">
 
         <script>
-            function calculate() {
+            function calculateBMI(){
                 const heightInputFeet = document.getElementById("heightInputFeet").value;
                 const heightInputInch = document.querySelector("#heightInputInch").value;
                 
-                const WeightInputKg = document.querySelector("#WeightInputKg").value;
+                const weightInputKg = document.querySelector("#weightInputKg").value;
 
                 heightInputFeet = parseInt(heightInputFeet);
                 heightInputInch = parseInt(heightInputInch);
@@ -53,33 +60,36 @@
                 let bodyMassIndex = WeightInputKg / heightInMeterSq;
 
                 let idealWeight = 22 * heightInMeterSq ; 
-                let weightToLoss =  (WeightInputKg - idealWeight).toFixed(2) ;
+                let weightToLose =  (WeightInputKg - idealWeight).toFixed(2) ;
                 let weightToGain = (idealWeight - WeightInputKg).toFixed(2);
      
                 let title = " you are " ;
                 
                 
                 if (bodyMassIndex > 30) {
-                    title += `Obese. you need to lose ${} indexes`;
+                    title += `Obese. you need to lose ${weightToLose}Kg`;
                 }else if(bodyMassIndex > 25) {
-                    title += `Overweight. you need to lose ${bodyMassIndex - 22} indexes`;
+                    title += `Overweight. you need to lose ${weightToLose}Kg`;
                 }else if(bodyMassIndex > 18.5) {
                     if(bodyMassIndex > 22){
-                        title += `Normal but optionally you may lose ${bodyMassIndex - 22} indexes`;
+                        title += `Normal but optionally you may lose ${weightToLose} indexes`;
+                    }else if(parseInt(bodyMassIndex) === 22){
+                        title += `perfectly normal ` ;
                     }else{
-                        title += `Normal but optionally you may gain ${22 - bodyMassIndex} indexes`;
+                        title += `Normal but optionally you may gain ${weightToGain} indexes`;
                     }
                 }else{
-                    title += "Underweight";
+                    title += `Underweight . Supposed to gain  ${weightToGain}Kg `;
                 }
                 console.log("index:", bodyMassIndex);
                 console.log("title:" , title);
 
+                console.log("idealWeight:" ,idealWeight);
 
-
+                document.querySelector("#title").innerHTML = `Ideal Weight : ${(idealWeight).toFixed(2)}Kg`;
+                document.querySelector("#suggestion").innerHTML = title ;
             }  
         </script>
-    </form>
-    </form>
+    
 </body>
 </html>
