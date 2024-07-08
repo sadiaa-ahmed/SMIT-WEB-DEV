@@ -21,13 +21,13 @@
         <label for="heightInputFeet">
             your Height:
         </label>
-        <input class="heightInputField " type="number" id="heightInputFeet" min="0" max="10" placeholder="feet" width="3">
-        <input class="heightInputField " type="number" id="heightInputInch" min="0" max="11" placeholder="inch" width="3">
+        <input required step="1" class="heightInputField " type="number" id="heightInputFeet" min="0" max="10" placeholder="feet" width="3" size="5">
+        <input required step="1" class="heightInputField " type="number" id="heightInputInch" min="0" max="11" placeholder="inch" width="3" >
 
         <label for="heightInput">
             your Weight:
         </label>
-        <input class="weightInputField " type="number" id="WeightInputKg" min="0" max="85Kg" placeholder="feet" width="3">
+        <input required step="0.1" class="weightInputField " type="number" id="WeightInputKg" min="0" max="200" placeholder="feet" width="85kg">
         <!-- <input class="heightInputField " type="number" id="heightInput" min="0" max="11" placeholder="inch" width="3"> -->
 
         <button type="submit"> 
@@ -51,18 +51,31 @@
                 let heightInMeterSq = heightInMeter * heightInMeter ;
 
                 let bodyMassIndex = WeightInputKg / heightInMeterSq;
+
+                let idealWeight = 22 * heightInMeterSq ; 
+                let weightToLoss =  (WeightInputKg - idealWeight).toFixed(2) ;
+                let weightToGain = (idealWeight - WeightInputKg).toFixed(2);
      
-                let title = " " ;
+                let title = " you are " ;
+                
                 
                 if (bodyMassIndex > 30) {
-                    title = "Obese";
+                    title += `Obese. you need to lose ${} indexes`;
                 }else if(bodyMassIndex > 25) {
-                    title = "Overweight";
+                    title += `Overweight. you need to lose ${bodyMassIndex - 22} indexes`;
                 }else if(bodyMassIndex > 18.5) {
-                    title = "Normal ";
+                    if(bodyMassIndex > 22){
+                        title += `Normal but optionally you may lose ${bodyMassIndex - 22} indexes`;
+                    }else{
+                        title += `Normal but optionally you may gain ${22 - bodyMassIndex} indexes`;
+                    }
                 }else{
-                    title = "Underweight";
+                    title += "Underweight";
                 }
+                console.log("index:", bodyMassIndex);
+                console.log("title:" , title);
+
+
 
             }  
         </script>
