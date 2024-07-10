@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+</head>
+<body>
+    <h1>Percentage Calculator</h1>
+    <input type="number" id="number" placeholder="Enter the first number">
+    <input type="number" id="total" placeholder="Enter the second number">
+    <button id="calculateButton">Calculate Percentage</button>
+    <p id="result"></p>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('calculateButton').addEventListener('click', function() {
+                const number = parseFloat(document.getElementById('number').value);
+                const total = parseFloat(document.getElementById('total').value);
+                if (!isNaN(number) && !isNaN(total) && total !== 0) {
+                    const result = (number / total) * 100;
+                    document.getElementById('result').innerText = `Result: ${result.toFixed(2)}%`;
+                } else {
+                    document.getElementById('result').innerText = 'Please enter valid numbers.';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
