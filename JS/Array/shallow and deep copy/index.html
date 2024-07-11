@@ -3,40 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shalloe And Deep Copy</title>
+    <title>Shallow And Deep Copy</title>
 </head>
 <body>
    <h1>   *** Shalllow And Deep Copy Copy ***</h1> 
      <script type="module">
+
         // let original = { a: 1, b: { c: 2 } };
         // let  shallowCopy = { ...original };
         // shallowCopy.a = 3;
 
         // console.log(original.a); // Output: 3
 
-        let original = {
-            name: 'Ali',
-            details: {
-                age: 25,
-                city: 'Karachi'
-            }
-        };
-        let shallowCopy = Object.assign({}, original);
-        shallowCopy.details.age = 30;
-        console.log(original.details.age);
+        // let original = {
+        //     name: 'Ali',
+        //     details: {
+        //         age: 25,
+        //         city: 'Karachi'
+        //     }
+        // };
+        // let shallowCopy = Object.assign({}, original);
+        // shallowCopy.details.age = 30;
+        // console.log(original.details.age);
 
-        const originalObj =
-        {
-            name: "Sadia",
-            isMarried: false,
-            address: 
-                { city: "Wonderland", zip: 12345 },
+        // const originalObj =
+        // {
+        //     name: "Sadia",
+        //     isMarried: false,
+        //     address: 
+        //         { city: "Wonderland", zip: 12345 },
 
-        };
-        console.log(typeof JSON.parse());
+        // };
+        // console.log(typeof JSON.parse("[0, 34 , 5 ]"));
 
     //  *** Deep Copy ***
-    
+     
+    const originalObj = {
+        name: "Sadia",
+        isMarried: false,
+        address: { 
+            city: "Wonderland", 
+            zip: 12345 
+        },
+        hobbies: ["reading", "gaming"]
+    };
+    const deepCopy = JSON.parse(JSON.stringify(originalObj));
+
+    // deep copy ko modify karna
+    deepCopy.address.city = "Baldia Town";
+    deepCopy.hobbies.push("cooking");
+
+    // Asli object ko check karna
+    console.log(originalObj.address.city); // Output: "Wonderland"
+    console.log(originalObj.hobbies); // Output: ["reading", "gaming"]
+
+    // Deep copy ko check karna
+    console.log(deepCopy.address.city); // Output: "Baldia Town"
+    console.log(deepCopy.hobbies); // Output: ["reading", "gaming", "cooking"]
 
 
      </script>
