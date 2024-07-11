@@ -66,16 +66,61 @@
         //    console.log("name:" , name);
         //    console.log("nameCopy" , nameCopy);
 
-           let arr = ["car" , "bus" , "bike"]; 
-           let copy =arr ;
+        //    let arr = ["car" , "bus" , "bike"]; 
+        // //    let copy =arr ;
+        //     let copy = [...arr];                // cloning
 
-           console.log("arr" , arr);
-           console.log("copy" , copy);
+        //    console.log("arr" , arr);
+        //    console.log("copy" , copy);
 
-           arr[0] = "audi";
+        //    arr[0] = "audi";
 
-           console.log("arr" , arr);
-           console.log("copy" , copy);     
+        //    console.log("arr" , arr);
+        //    console.log("copy" , copy);     
+
+        // *** Deep Copy ANd Shallow ***
+
+        //  *** Shalllow Copy ***
+
+        // let original = { a: 1, b: { c: 2 } };
+        // let  shallowCopy = { ...original };
+        // shallowCopy.a = 3;
+
+        // console.log(original.a); // Output: 3
+
+        let original = {
+            name: 'Ali',
+            details: {
+                age: 25,
+                city: 'Karachi'
+            }
+        };
+        let shallowCopy = Object.assign({}, original);
+        shallowCopy.details.age = 30;
+        console.log(original.details.age);
+
+        const originalObj = {
+        name: "Sadia",
+        isMarried: false,
+        address: 
+        { city: "Wonderland", zip: 12345 },
+
+    };
+    console.log(typeof JSON.parse());
+
+                  // *** Deep Copy ***
+
+
+        
     </script>
 </body>
 </html>
+
+
+
+<!-- // deep copy vs shallow copy
+// https://youtu.be/4Ej0LwjCDZQ?si=5ntaTItekb7jEv_h
+// https://www.freecodecamp.org/news/clone-an-object-in-javascript/
+// https://developer.mozilla.org/en-US/docs/Glossary/Shallow_copy
+// https://www.freecodecamp.org/news/copying-stuff-in-javascript-how-to-differentiate-between-deep-and-shallow-copies-b6d8c1ef09cd/
+// https://stackoverflow.com/questions/3978492/fastest-way-to-duplicate-an-array-in-javascript-slice-vs-for-loop -->
