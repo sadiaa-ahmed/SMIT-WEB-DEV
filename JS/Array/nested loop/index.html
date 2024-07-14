@@ -12,21 +12,21 @@
 
         let matrix1= [
             [2,1,6,3],
-            [3.4,5,2],
+            [3,4,5,2],
             [8,9,7,6]
         ]
         for (let i = 0 ; i < matrix1.length ; i++){
             for (let j = 0 ; j < matrix1[i].length ; j++){
-                console.log(matrix1[i][0]);
-                console.log(matrix1[i][1]);
-                console.log(matrix1[i][2]);
+                console.log(matrix1[i][j]);
+                // console.log(matrix1[i][1]);
+                // console.log(matrix1[i][2]);
             
-                matrix1[i][0] = matrix1[i][0] * 2
-                matrix1[i][1] = matrix1[i][1] * 2
-                matrix1[i][2] = matrix1[i][2] * 2
+                matrix1[i][j] = matrix1[i][j] * 2
+                // matrix1[i][1] = matrix1[i][1] * 2
+                // matrix1[i][2] = matrix1[i][2] * 2
             }
-
         }
+        console.log("result" , matrix1)
    
     </script>
 </body>
