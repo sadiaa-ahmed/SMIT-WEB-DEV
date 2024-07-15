@@ -9,7 +9,20 @@
     <h1>Modify Array with Loop</h1>
       
     <script type="module">
-        
+        let arr = [3,5,8, 4 ,2,7,9];
+
+        let newArr = arr.map((eachItem , i) =>{
+            console.log(eachItem);
+
+            if(eachItem % 2 === 0){                                    // even
+                return eachItem;
+            }else{
+                return eachItem * 2;
+            }
+           
+        })
+    console.log(arr);
+    console.log(newArr);
     </script>
 </body>
 </html>
