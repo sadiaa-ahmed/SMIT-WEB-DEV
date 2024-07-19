@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date And Time</title>
+</head>
+<body>
+    <h1>DATA AND TIME</h1>
+
+    <script type="module">
+        // data ko get kerny ka tareeqa hai ye ......issy hamary operating system ki date wagheerah aye gi ..... jo at a time mojod hogi 
+        let now = new Date();
+        console.log("now" , now);
+
+        //  ye jo oper likha hai ye aik object hai ab hum isko string main convert karengy 
+//  1st method of date :
+        let strDate = now.toString();            // ye aik string bana ker return kary ga ye asal object ko kuch nahi kary ga 
+        console.log("stringDate", strDate);
+
+//  2nd method of date :   iss sy hamary pass day aye ga  
+
+    let day = now.getDay();
+    console.log("Day" , day);
+    </script>
+</body>
+</html>
