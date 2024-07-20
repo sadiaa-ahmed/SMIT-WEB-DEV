@@ -13,13 +13,23 @@
             name : "ali" , 
             roll : "90",
             isActive : true,
-            0 : "car"
+            0 : "car",
+            electives:[
+                {name : "abc"},
+                {name : "bhy"},
+                {name : "kfy"}
+            ]
         }
-        console.log(obj["name"]);
-        console.log(obj["roll"]);
-        console.log(obj["isActive"]);
-        console.log(obj[0]);
+
+        obj["name"] = "Sadia";               // issy object changeho jaye ga
+
+        // console.log(obj["name"]);
+        // console.log(obj["roll"]);
+        // console.log(obj["isActive"]);
+        // console.log(obj[0]);
        
+        console.log(obj.roll);             // dot Notation
+        console.log(obj);
         
     </script>
 </body>
