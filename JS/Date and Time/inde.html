@@ -8,7 +8,7 @@
 <body>
     <h1>DATA AND TIME</h1>
 
-    <script type="module">
+    <script type="module"  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js">
 //         // data ko get kerny ka tareeqa hai ye ......issy hamary operating system ki date wagheerah aye gi ..... jo at a time mojod hogi 
 //         let now = new Date();
 //         console.log("now" , now);
@@ -25,49 +25,54 @@
 
 //  **** Generate Date and Time ****
 
-        let monthNames = ["Jan " , "Feb" ,  "March", "April"]
+        // let monthNames = ["Jan " , "Feb" ,  "March", "April"]
 
-        let now = new Date();
-        console.log("now" , now);
+        // let now = new Date();
+        // console.log("now" , now);
         
-        // let month = now.getMonth();
-        let month = monthNames[now.getMonth()];
-        let date = now.getDate();
-        let hour = now.getHours();
-        let minute = now.getMinutes();
-        let ampm = "";
-
-        
-
-        if(date === 1 || date === 21 || date === 31 ){
-            date = `${date}st`
-        }else if(date === 2 || date === 22){
-            date = `${date}nd`
-        }else if(date === 3 || date === 23){
-            date = `${date}rd`
-        }else if(date >  3){
-            date = `${date}th`
-        }
+        // // let month = now.getMonth();
+        // let month = monthNames[now.getMonth()];
+        // let date = now.getDate();
+        // let hour = now.getHours();
+        // let minute = now.getMinutes();
+        // let ampm = "";
 
         
-        if(hour <= 11){
-            ampm = "AM";
-        }else{
-            ampm = "PM";
-        }
 
-        if(hour === 0 ){
-            hour = 12;
-        }else if(hour > 12){
-            houe = hour - 12;
-        }
+        // if(date === 1 || date === 21 || date === 31 ){
+        //     date = `${date}st`
+        // }else if(date === 2 || date === 22){
+        //     date = `${date}nd`
+        // }else if(date === 3 || date === 23){
+        //     date = `${date}rd`
+        // }else if(date >  3){
+        //     date = `${date}th`
+        // }
 
-        if(date <= 9){
-            date =`0${date}`
-        }
+        
+        // if(hour <= 11){
+        //     ampm = "AM";
+        // }else{
+        //     ampm = "PM";
+        // }
 
-        let formatedTime = `${month} ${date} ${hour}:${mins} `;
-        console.log(formatedTime);
+        // if(hour === 0 ){
+        //     hour = 12;
+        // }else if(hour > 12){
+        //     houe = hour - 12;
+        // }
+
+        // if(date <= 9){
+        //     date =`0${date}`
+        // }
+
+        // let formatedTime = `${month} ${date} ${hour}:${mins} `;
+        // console.log(formatedTime);
+
+        // **** moment.js library ****
+
+        let now = moment().format('MMM Do YYYY hh:mm :ss A');
+        console.log(now)
 
 
         
