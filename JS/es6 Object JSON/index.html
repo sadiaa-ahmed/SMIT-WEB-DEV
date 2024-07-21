@@ -15,21 +15,30 @@
             isActive : true,
             0 : "car",
             electives:[
-                {name : "abc"},
+                {name : "abc" , teacher:"Alice"},
                 {name : "bhy"},
                 {name : "kfy"}
-            ]
+            ],
+            bio:{
+                age:19,
+                isSingle: true,
+                nat:"pakistani",
+            }
         }
 
         obj["name"] = "Sadia";               // issy object changeho jaye ga
 
-        // console.log(obj["name"]);
-        // console.log(obj["roll"]);
-        // console.log(obj["isActive"]);
-        // console.log(obj[0]);
+        console.log(obj["name"]);
+        console.log(obj["roll"]);
+        console.log(obj["isActive"]);
+        console.log(obj[0]);
        
         console.log(obj.roll);             // dot Notation
         console.log(obj);
+        console.log(obj.electives[0].teacher);
+        console.log(obj.bio.age)
+
+
         
     </script>
 </body>

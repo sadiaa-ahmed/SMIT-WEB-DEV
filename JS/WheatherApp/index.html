@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+</head>
+<body>
+    <h1>WeatherApp</h1>
+    <form onSubmit="getWeather(); return false">
+        <label for="cityName">City</label>
+        <input type="text" id="cityName" name="cityName" placeholder="enter your City Name ">
+        <br>
+
+        <button type="submit">Get Weather</button>
+
+    </form>
+    <div id="result">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <script type="module">
+        window.getWeather = function(){
+            let cityName = document.querySelector("#cityName").value;
+            
+            let API_KEY = '61f2ee8dffc86648e6eec0b67b3270a1';
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`)
+                .then(function (response) {
+                    // handle success
+                    console.log(response.data);
+                    document.querySelector("#result").innerHTML = `current temperature is ${response.data.main.temp}'C`
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error.data);
+                    document.querySelector("#result").innerHTML = "error in getting weather data"
+                })
+        }
+    </script>
+</body>
+</html>
