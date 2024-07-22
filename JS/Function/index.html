@@ -8,28 +8,42 @@
 <body>
     <h1>Function</h1>
 
+    <button onClick="prt()">click me</button>
+
     <script>
-        function sum(num1 , num2){
-            let total = num1+ num2;
+        // function sum(num1 , num2){
+        //     let total = num1+ num2;
 
-            return total;
+        //     return total;
+        // }
+
+        // function avg(arr){
+        //     let sum = 0;
+        //     for(let i = 0 ; i<arr.length ; i++)
+        //    {
+        //     sum = sum +arr[i];
+        //    }
+        //    let result = sum/arr/length;
+        //    result = result.toFixed(2);
+        //    result = Number(result);
+        //    return result;
+        // }
+        // setTimeout(() =>{
+        //     console.log(avg([2,4,5,7,8,5,6]));
+
+        // }, 3000)
+
+        // // console.log(avg([2,4,5,7,8,5,6]));
+
+        // console.log(sum(3,4));
+
+        // function prt(){
+        //     console.log(new Date()) ;
+        // }
+        // prt();
+        function prt(){
+            console.log(new Date()) ;
         }
-
-        function avg(arr){
-            let sum = 0;
-            for(let i = 0 ; i<arr.length ; i++)
-           {
-            sum = sum +arr[i];
-           }
-           let result = sum/arr/length;
-           result = result.toFixed(2);
-           result = Number(result);
-           return result;
-        }
-
-        console.log(avg([2,4,5,7,8,5,6]));
-
-        console.log(sum(3,4));
       
     </script>
 </body>
