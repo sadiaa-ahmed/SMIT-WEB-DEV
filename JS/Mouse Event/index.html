@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mouse over event</h1>
+    <img id="myImg" src="horses.png" alt="image" onmouseover="swapImg()" onmouseleave="backToOriginal()">
+
+    <script type="module">
+        // window.swapImg = ()=>{
+        //     console.log("event catch");
+            
+        //     let elm = document.querySelector("#myImg");
+        //     elm.src = "download.jpeg"
+        // }
+
+        window.swapImg = ()=>{
+            console.log("event catch: swapImg");
+            
+            let elm = document.querySelector("#myImg");
+            elm.src = "download.jpeg"
+        }
+        window.backToOriginal = ()=>{
+            console.log("back To Original");
+            
+            let elm = document.querySelector("#myImg");
+            elm.src = "horses.png"
+        }
+    </script>
+</body>
+</html>
