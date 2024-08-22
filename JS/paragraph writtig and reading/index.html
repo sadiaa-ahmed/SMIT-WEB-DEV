@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload ="seeLess()">
+    <h2>Post title</h2>
+    <!-- <p id="postText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, assumenda. Adipisci cumque maiores dolorem, obcaecati quibusdam ad fugit. Voluptatibus recusandae repellat totam impedit laudantium fugiat vero? Nostrum voluptates inventore facere?.... <a href="javascript:void(0);" onclick="seeMore()"> see more</a></p> -->
+    <p id="postText"></p>
+    <script type="module">
+        let fullPara = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur necessitatibus delectus omnis facere tempore quidem perspiciatis cum iusto dolorum tempora."
+
+        let seeLessLink = `<a href="javascript:void(0);" onclick="seeLess()">see less</a>`
+        let seeMoreLink = `<a href="javascript:void(0);" onclick="seeMore()">see more</a>`
+
+        // window.loadPage = () => {
+        //     document.querySelector("#postText").innerHTML= fullPara.slice(0 , 150) + "... " + seeMoreLink
+        // }
+
+        window.seeMore = () => {
+            document.querySelector("#postText").innerHTML= fullPara + " " + seeLessLink
+        }
+
+        window.seeLess = () => {
+            document.querySelector("#postText").innerHTML= fullPara.slice(0 , 150) + "... " + seeMoreLink
+        }
+    </script>
+</body>
+</html>
