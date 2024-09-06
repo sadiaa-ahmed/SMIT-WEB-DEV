@@ -37,4 +37,3 @@
 // Use camel case to declare a new secondCharacter variable
 // let secondCharacter;
 
-
