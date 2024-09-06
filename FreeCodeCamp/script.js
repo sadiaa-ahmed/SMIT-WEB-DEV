@@ -37,3 +37,11 @@
 // Use camel case to declare a new secondCharacter variable
 // let secondCharacter;
 
+// ****____*****
+
+// let profession = "teacher" ; 
+// let age;
+// console.log(profession);
+// console.log(age);
+
+
