@@ -44,4 +44,11 @@
 // console.log(profession);
 // console.log(age);
 
+// ****_____***** 
+// let count = 8;
+// let result1 = count + 1;  
+// let result2 = count - 3;  
+// let result3 = count * 5;  
+// let result4 = count / 2;  
+
 
