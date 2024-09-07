@@ -6,9 +6,24 @@
     <title>DOM</title>
 </head>
 <body>
-    
+    <h1 id="exampleHeader">Original Text</h1>
+    <button id="changeTextButton">Change Text</button>
+
+    <!-- *****_____****** -->
+    <!-- DOM (Document Object Model) is a programming interface for web documents. It represents the structure of a document as a tree of objects, where each node is an object representing a part of the document (like elements, attributes, or text). JavaScript can be used to interact with and manipulate the DOM to dynamically update the content, structure, and style of a webpage. -->
+
     <script>
-        
+        // Get the header element from the DOM
+        const header = document.getElementById('exampleHeader');
+
+        // Get the button element from the DOM
+        const button = document.getElementById('changeTextButton');
+
+        // Add an event listener to the button
+        button.addEventListener('click', () => {
+        // Change the text content of the header
+        header.textContent = 'Text Changed!';
+});
     </script>
 </body>
 </html>
