@@ -42,6 +42,26 @@
         // Example: 
         //  number ko variable main store kiya ja sekta hai , function main pass kiya ja sekta hai as a parameter, r return value sy return bhi kerwa sekty hain 
 
+
+
+        class Risala extends Book{
+            constructor(name , author , gener,weekNumber,com){
+                console.log("this type is getting constructed")
+
+                super(name , author)
+                // this.author = "jdek"      aisy isko hum overwrite bhi kersekty hain 
+                this.company = com;
+                this.gener = gener;
+                this.week = weekNumber;
+            }
+            // static views = 5
+            // static viewIncrement(){
+            //     console.log("a view is incremented");
+            // }
+        }
+        // make instance
+        let a = new Risala("jdvkb" , "djdijvh", "politics " , "2" , "express");     
+        console.log(a.gener); 
     </script>
 </body>
 </html>
