@@ -82,3 +82,30 @@
 // rows[rows.length -1]= 10;
 // console.log(rows[rows.length -1]);
 
+
+// let cities = ["London", "New York", "Mumbai"];
+// console.log(cities);
+// cities[cities.length -1] = "Mexico City";
+// console.log(cities);
+
+// let rows = ["London", "New York", "Mumbai"];
+// rows.push("freeCodeCamp");
+// console.log(rows);
+
+// // Initialize the rows array with some values
+// let rows = ["London", "New York", "Mumbai", "freeCodeCamp"];
+
+// // Use .pop() to remove the last element and assign it to a new variable
+// let popped = rows.pop();
+
+// // Log the value of popped to the console
+// console.log(popped); 
+
+// // Log the updated rows array to the console
+// console.log(rows);
+
+
+// let rows = ["London", "New York", "Mumbai"];
+// let pushed = rows.push("freeCodeCamp");
+// console.log(pushed);
+// console.log(rows);
