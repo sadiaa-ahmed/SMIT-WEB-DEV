@@ -29,3 +29,32 @@
 //     console.log("my error msg", error.message);
 //   }
 // });
+
+
+
+import { auth,signInWithEmailAndPassword } from "./firebase.js";
+
+const form = document.querySelector("#login-form");
+const msgDiv = document.querySelector("#msg");
+
+form.addEventListener("submit", async (event) => {
+  try {
+    event.preventDefault();
+
+    msgDiv.innerText = "loading...";
+
+    const email = event.target.children[0].value;
+    const password = event.target.children[1].value;
+
+    // firebase se signup karne ka function
+    const result = await signInWithEmailAndPassword(auth, email, password);
+
+    msgDiv.innerText = "login done";
+
+    // window.location = "./dashboard.html";
+
+    console.log(result);
+  } catch (error) {
+    console.log("my error msg", error.message);
+  }
+});
