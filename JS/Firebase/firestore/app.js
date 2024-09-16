@@ -44,41 +44,40 @@ import {
     const product = doc.data();
   
     // date converted to "1 day ago | 20 min ago" (optional)
-    const date = product.createdAt
-      ? dateFns.formatDistance(product.createdAt?.toDate(), new Date(), {
-          addSuffix: true, // true means ago add karna hy
-        })
-      : "";
+    // const date = product.createdAt
+    //   ? dateFns.formatDistance(product.createdAt?.toDate(), new Date(), {
+    //       addSuffix: true, // true means ago add karna hy
+    //     })
+    //   : "";
   
     allProducts.innerHTML += `<div>
           <!-- <img src="" alt=""> -->
           <h3>${product.productName?.toUpperCase()}</h3>
-          <span>${date}</span>
           <p class="price">Rs.${product.productPrice}</p>
           <p>${product.productDetail}</p>
         </div>`;
   });
   
   // 2 (working)
-  onSnapshot(myCollectionReference, (doc) => {
-    allProducts.innerHTML = "";
+  // onSnapshot(myCollectionReference, (doc) => {
+  //   allProducts.innerHTML = "";
   
-    doc.docs.forEach((eachDoc, index) => {
-      const product = eachDoc.data();
+  //   doc.docs.forEach((eachDoc, index) => {
+  //     const product = eachDoc.data();
   
-      allProducts.innerHTML += `<div>
-          ${index + 1}
-          <h3>${product.productName}</h3>
-          <span>${product.createdAt?.toDate()}</span>
-          <p class="price">Rs.${product.productPrice}</p>
-          <p>${product.productDetail}</p>
-        </div>`;
-    });
-  });
+  //     allProducts.innerHTML += `<div>
+  //         ${index + 1}
+  //         <h3>${product.productName}</h3>
+  //         <span>${product.createdAt?.toDate()}</span>
+  //         <p class="price">Rs.${product.productPrice}</p>
+  //         <p>${product.productDetail}</p>
+  //       </div>`;
+  //   });
+  // });
 
 try {
     const docRef = await addDoc(collection(db, "products"), myProduct);
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.log("Error adding document: ", e);
   }
