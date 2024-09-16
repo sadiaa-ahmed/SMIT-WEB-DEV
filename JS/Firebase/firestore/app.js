@@ -76,3 +76,5 @@
 //         </div>`;
 //     });
 //   });
+
+import {db} from './firebase.js';
