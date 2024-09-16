@@ -51,10 +51,11 @@ form.addEventListener("submit", async (event) => {
 
     msgDiv.innerText = "login done";
 
-    // window.location = "./dashboard.html";
+    window.location = "./dashboard.html";
 
     console.log(result);
   } catch (error) {
+    msgDiv.innerText = error.message || "Error"
     console.log("my error msg", error.message);
   }
 });
