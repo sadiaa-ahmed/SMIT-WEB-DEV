@@ -109,3 +109,17 @@
 // let pushed = rows.push("freeCodeCamp");
 // console.log(pushed);
 // console.log(rows);
+
+
+// // Sort in Array
+// const myArr = [1,3,4,100,-200,8,1,3];
+
+// myArr.sort((a,b) => (a-b));        // ye formula hai jb bhi number sort kerny hon tb use kerna hoga
+
+// console.log(myArr);
+
+
+// // SET in Javaa
+// const test = new Set([2,3,4]);
+// test.add("Ayan")
+// console.log(test.has("Ayan"));
