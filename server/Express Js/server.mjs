@@ -11,8 +11,12 @@ console.log("This is express server");
 //  expressJs k code ko run kerny k liye node (file ka naam)
 
 import express from 'express';
-const app = express()
+const app = express();
 
+app.get('/', (req , res) =>{
+    console.log('Hello!',  new Date());
+    res.send('Hello' + new Date());
+})
 
 app.get('/profile', (req , res) =>{
     console.log('this is profile!',  new Date());
