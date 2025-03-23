@@ -6,6 +6,29 @@
     <title>DOM</title>
 </head>
 <body>
+    <!-- DOM ka kaam?
+    ✅ HTML elements ko access karna
+    ✅ CSS aur content ko change karna
+    ✅ Events handle karna
+    ✅ Dynamic changes lana bina page reload kiye --> 
+
+    <!-- Nodes (DOM ka base structure)
+    DOM ek tree structure hota hai jo multiple nodes par based hota hai:
+    
+    Document Node → document (poora webpage)
+    
+    Element Nodes → <div>, <p>, <h1>, <img>, etc.
+    
+    Text Nodes → innerText, textContent
+    
+    Attribute Nodes → class, id, href, etc.
+    
+    Comment Nodes → This is a comment     -->
+
+    <!-- Ek hi element select karna chahti hain → getElementById() ya querySelector() use karein.
+    Multiple elements ko select karna chahti hain → getElementsByClassName(), getElementsByTagName(), ya querySelectorAll() use karein.
+    CSS selectors ka use karna chahti hain → querySelector() ya querySelectorAll() best hain!     -->
+    
     <h1 id="exampleHeader">Original Text</h1>
     <button id="changeTextButton">Change Text</button>
 
@@ -23,6 +46,7 @@
         button.addEventListener('click', () => {
         // Change the text content of the header
         header.textContent = 'Text Changed!';
+
 });
     </script>
 </body>
