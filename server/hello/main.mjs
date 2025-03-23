@@ -1,4 +1,4 @@
-console.log("hello")
+console.log("hello world srver side jscd ")
 
 
 // node -v 
