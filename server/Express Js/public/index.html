@@ -26,7 +26,7 @@
             let cityName = document.querySelector("#cityName").value;
             
             // let API_KEY = '61f2ee8dffc86648e6eec0b67b3270a1';
-            axios.get(`http://localhost:3000/weather/${cityName}`)
+            axios.get(`/weather/${cityName}`)
                 .then(function (response) {
                     // handle success
                     console.log(response.data);

@@ -27,12 +27,12 @@ console.log("This is express server");
 // http://192.168.2.105:3000/  (ye mery laptop ka ip address hai)
 
 import express from 'express';
-import cors from 'cors';
+// import cors from 'cors';
 import path from 'path'; 
 
 const app = express()
 const __dirname = path.resolve();
-app.use(cors())
+// app.use(cors())
 // const port =  3000
 
 // (lecture 114 express.js deploy )
@@ -84,7 +84,7 @@ app.get('/weather/:cityName', (req, res) => {
     // })
 })
 
-app.use('/', express.static("public"))
+app.use('/', express.static(path.join(__dirname, 'public')))
 
 const PORT = process.env.PORT || 3000 ; 
 app.listen(PORT, () => {
